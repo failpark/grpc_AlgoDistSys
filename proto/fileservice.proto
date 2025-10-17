@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package fileservice;
+
+service FileService {
+  rpc ListDirectory(ListDirectoryRequest) returns (ListDirectoryResponse);
+}
+
+message ListDirectoryRequest {
+  string path = 1;
+}
+
+message ListDirectoryResponse {
+  repeated string filenames = 1;
+}
