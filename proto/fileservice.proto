@@ -1,7 +1,8 @@
 syntax = "proto3";
-option go_package = "example.com/grpc-dir/proto;proto";
 
 package fileservice;
+
+option go_package = "grpc-seminar/proto";
 
 service file_service {
   rpc list_dir(path) returns (dir);
