@@ -15,11 +15,11 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 const fileservice = grpc.loadPackageDefinition(packageDefinition).fileservice;
 
 function main() {
-	const client = new fileservice.FileService('localhost:50051', grpc.credentials.createInsecure());
+	const client = new fileservice.file_service('localhost:50051', grpc.credentials.createInsecure());
 
 	const directoryPath = process.argv[2] || '.';
 
-	client.listDirectory({ path: directoryPath }, (error, response) => {
+	client.list_dir({ path: directoryPath }, (error, response) => {
 		if (error) {
 			console.error('Error:', error.details);
 			return;

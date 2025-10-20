@@ -1,15 +1,16 @@
 syntax = "proto3";
+option go_package = "example.com/grpc-dir/proto;proto";
 
 package fileservice;
 
-service FileService {
-  rpc ListDirectory(ListDirectoryRequest) returns (ListDirectoryResponse);
+service file_service {
+  rpc list_dir(path) returns (dir);
 }
 
-message ListDirectoryRequest {
+message path {
   string path = 1;
 }
 
-message ListDirectoryResponse {
+message dir {
   repeated string filenames = 1;
 }

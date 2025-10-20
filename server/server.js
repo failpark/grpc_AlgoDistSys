@@ -39,8 +39,8 @@ function listDirectory(call, callback) {
 function main() {
 	const server = new grpc.Server();
 
-	server.addService(fileservice.FileService.service, {
-		listDirectory: listDirectory
+	server.addService(fileservice.file_service.service, {
+		list_dir: listDirectory
 	});
 
 	const port = '50051';
@@ -50,7 +50,7 @@ function main() {
 			return;
 		}
 		console.log(`Server started on localhost:${boundPort}`);
-		server.start();
+		server;
 	});
 }
 
