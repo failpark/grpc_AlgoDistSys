@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	conn, _ := grpc.Dial("localhost:50051", grpc.WithInsecure())
+	conn, _ := grpc.NewClient("localhost:50051", grpc.WithInsecure())
 	defer conn.Close()
 	c := pb.NewFileServiceClient(conn)
 
